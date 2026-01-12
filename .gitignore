@@ -1,0 +1,6 @@
+# Build files
+*.ihx
+*.lst
+*.rel
+*.sym
+
