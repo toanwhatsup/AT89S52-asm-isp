@@ -10,8 +10,8 @@ To "wake up" the 8051, the following connections are mandatory:
 * **VCC (Pin 40):** +5V
 * **GND (Pin 20):** Common Ground with Arduino.
 * **EA/VPP (Pin 31):** Must be tied to **+5V** to execute internal flash code.
-* **Clock:** 11.0592 MHz crystal across Pins 18 & 19, with two 33pF ceramic capacitors to GND.
-* **Reset (Pin 9):** 10kΩ pull-down resistor to GND (during runtime).
+* **Clock:** 11.0592 MHz crystal across Pins 18 & 19, with two 33pF ceramic capacitors closest to GND. Pin 19 (XTAL1) capacitor should take the shortest path to Pin 20 (GND). Local GND plane and Guard ring around oscillator should also be considered while designing the PCB.
+* **Reset (Pin 9):** 10µF capacitor to +5V and 10kΩ pull-down resistor to GND (during runtime).
 
 ### 2. ISP Wiring (Arduino Mega to AT89S52)
 | Function | Arduino Mega Pin | AT89S52 Pin |
