@@ -47,6 +47,7 @@ By changing the values in R7, R6, and R5, we are simply multiplying that 1.085µ
 - cpl: Compliment bit - toggle bit value
 - setb: Set bit - set bit value to 1
 - clr
+- djnz
 - ljmp
 - sjmp
 - acall
