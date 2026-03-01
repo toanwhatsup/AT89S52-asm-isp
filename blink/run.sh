@@ -29,7 +29,7 @@ echo "--- Flashing to AT89S52 ---"
 if avrdude -c avrisp -p ${CHIP} -P ${PORT} -b ${BAUD} -U flash:w:${PROJECT}.ihx:i; then
     echo "--- SUCCESS! ---"
     # Optional: Remove temp files after successful flash
-    rm -f ${PROJECT}.rel ${PROJECT}.lst ${PROJECT}.sym ${PROJECT}.map
+    # rm -f ${PROJECT}.rel ${PROJECT}.lst ${PROJECT}.sym ${PROJECT}.map
 else
     echo "ERROR: Flashing failed!"
     exit 1
