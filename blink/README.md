@@ -16,7 +16,7 @@
 
 * "Sourcing" (Pin → LED → GND):
 - The pin is trying to push current through that weak internal resistor.
-- It can only provide about 50μA (microamps), which is barely enough to make a modern LED glow.
+- It can only provide about 50 μA (microamps), which is barely enough to make a modern LED glow.
 
 * "Sinking" (VCC → LED → Pin):
 - When the pin goes LOW, it turns on a strong transistor (FET) that connects the pin directly to Ground.
@@ -44,12 +44,12 @@ In assembly, the DJNZ instruction takes 2 MCs.
 By changing the values in R7, R6, and R5, we are simply multiplying that 1.085µs time.
 
 ## Assembly description:
-- cpl: Compliment bit - toggle bit value
-- setb: Set bit - set bit value to 1
-- clr
-- djnz
-- ljmp
-- sjmp
-- acall
-- mov
+- cpl: Compliment Accumulator - toggle bit value
+- clr: Clear Accumulator - set bit value to 0
+- setb: Set Bit - set bit value to 1
+- djnz: Decrement and Jump if Not Zero
+- ljmp: Long Jump
+- sjmp: Short Jump
+- acall: Absolute Call
+- mov: Move byte variable
 

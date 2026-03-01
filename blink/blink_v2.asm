@@ -1,5 +1,6 @@
 ; Standard 8051 Blink Program for sdas8051
 ; Target: AT89S52, Crystal: 11.0592 MHz
+; LED wiring: "Sinking" (VCC → LED → Pin)
 
             .area   ABS (ABS,CON)   ; Define absolute memory area
             .org    0x0000          ; Reset vector
@@ -7,18 +8,18 @@
 
             .org    0x0030          ; Main program start
 START:
-;            cpl     p1.0            ; Toggle LED on P1.0
-            setb    p1.0            ; P1.0 = 1: LED OFF
+;            cpl     p1.0            ; Toggle P1.0 value
+            setb    p1.0            ; Set P1.0 = 1: LED OFF
             mov     r7, #0x0F       ; Outer loop
             acall   DELAY           ; Wait
-            clr     p1.0            ; P1.0 = 0: LED ON
+            clr     p1.0            ; Set P1.0 = 0: LED ON
             mov     r7, #0x01       ; Outer loop
             acall   DELAY           ; Wait
             sjmp    START           ; Loop forever
 
 ; Delay Routine
 DELAY:
-;            mov     r7, #0x08       ; Outer loop
+;            mov     r7, #0x08       ; ~500ms at 11.0592MHz
 D1:         mov     r6, #0xFF       ; Middle loop
 D2:         mov     r5, #0xFF       ; Inner loop
 D3:         djnz    r5, D3          ; Decrement and jump if not 0
