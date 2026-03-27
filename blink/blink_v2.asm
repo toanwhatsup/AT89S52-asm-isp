@@ -8,18 +8,17 @@
 
             .org    0x0030          ; Main program start
 START:
-;            cpl     p1.0            ; Toggle P1.0 value
             setb    p1.0            ; Set P1.0 = 1: LED OFF
-            mov     r7, #0x0F       ; Outer loop
+            mov     r7, #0x08       ; Outer loop
             acall   DELAY           ; Wait
             clr     p1.0            ; Set P1.0 = 0: LED ON
-            mov     r7, #0x01       ; Outer loop
+            mov     r7, #0x08       ; Outer loop
             acall   DELAY           ; Wait
             sjmp    START           ; Loop forever
 
 ; Delay Routine
 DELAY:
-;            mov     r7, #0x08       ; ~500ms at 11.0592MHz
+;           mov     r7, #0x08       ; ~500ms delay at 11.0592MHz
 D1:         mov     r6, #0xFF       ; Middle loop
 D2:         mov     r5, #0xFF       ; Inner loop
 D3:         djnz    r5, D3          ; Decrement and jump if not 0
