@@ -13,13 +13,22 @@ To "wake up" the 8051, the following connections are mandatory:
 * **Clock:** 11.0592 MHz crystal across Pins 18 & 19, with two 33pF ceramic capacitors closest to GND. Pin 19 (XTAL1) capacitor should take the shortest path to Pin 20 (GND). Local GND plane and Guard ring around oscillator should also be considered while designing the PCB.
 * **Reset (Pin 9):** 10µF capacitor to +5V and 10kΩ pull-down resistor to GND (during runtime).
 
-### 2. ISP Wiring (Arduino Mega to AT89S52)
-| Function | Arduino Mega Pin | AT89S52 Pin |
-| :--- | :--- | :--- |
-| **MOSI** | 51 | 6 (P1.5) |
-| **MISO** | 50 | 7 (P1.6) |
-| **SCK** | 52 | 8 (P1.7) |
-| **Reset** | 10 | 9 (RST) |
+### 2. ISP Wiring
+#### Arduino Mega to AT89S52
+| Function  | Arduino Mega Pin | AT89S52 Pin |
+| :---      | :---             | :---        |
+| **MOSI**  | 51               | 6 (P1.5)    |
+| **MISO**  | 50               | 7 (P1.6)    |
+| **SCK**   | 52               | 8 (P1.7)    |
+| **Reset** | 10               | 9 (RST)     |
+
+#### Arduino Nano to AT89S52
+| Function  | Arduino Nano Pin | AT89S52 Pin |
+| :---      | :---             | :---        |
+| **MOSI**  | 11               | 6 (P1.5)    |
+| **MISO**  | 12               | 7 (P1.6)    |
+| **SCK**   | 13               | 8 (P1.7)    |
+| **Reset** | 10               | 9 (RST)     |
 
 ### 3. Preventing Auto-Reset
 Connect a **10µF capacitor** between the Arduino Mega's **RESET** and **GND** pins *after* uploading the ArduinoISP sketch.

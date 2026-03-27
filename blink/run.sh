@@ -3,6 +3,7 @@
 # Configuration
 PROJECT="blink_v2"
 PORT="/dev/ttyACM0"
+PORT="/dev/ttyUSB0"
 BAUD="19200"
 CHIP="89s52"
 
