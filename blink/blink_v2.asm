@@ -8,14 +8,21 @@
 
             .org    0x0030          ; Main program start
 START:
-            setb    p1.0            ; Set P1.0 = 1: LED OFF
-            setb    p0.7            ; Set P0.0 = 1: Buzzer OFF
-            mov     r7, #0x08       ; Outer loop
-            acall   DELAY           ; Wait
             clr     p1.0            ; Set P1.0 = 0: LED ON
+            mov     r7, #0x01       ; Outer loop
+            acall   DELAY           ; Wait
+            setb    p1.0            ; Set P1.0 = 1: LED OFF
+            mov     r7, #0x01       ; Outer loop
+            acall   DELAY           ; Wait
+
             clr     p0.7            ; Set P0.7 = 0: Buzzer ON
             mov     r7, #0x01       ; Outer loop
             acall   DELAY           ; Wait
+            setb    p0.7            ; Set P0.0 = 1: Buzzer OFF
+            mov     r7, #0x06       ; Outer loop
+            acall   DELAY           ; Wait
+
+
             sjmp    START           ; Loop forever
 
 ; Delay Routine
