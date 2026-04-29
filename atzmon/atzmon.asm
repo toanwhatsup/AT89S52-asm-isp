@@ -24,6 +24,9 @@ LCD_ADDR .equ 0x4E   ; Change to 0x7E if your backpack uses a different address
     .org  0x0030
 START:
     ; --- 0. System Warm-up ---
+    mov   r7, #0x08
+    acall DELAY
+
     acall LCD_INIT
 
     ; --- 1. TRUE Clear (0x01) ---
@@ -73,27 +76,9 @@ START:
     mov   a, #0x41
     acall LCD_DATA
 
-    mov   a, #0x42
-    acall LCD_DATA
-
-    mov   a, #0x43
-    acall LCD_DATA
-
-    mov   a, #0x44
-    acall LCD_DATA
-
-    mov   a, #0x45
-    acall LCD_DATA
-
-    mov   a, #0x46
-    acall LCD_DATA
-
-    mov   a, #0x47
-    acall LCD_DATA
-
-    acall LCD_DELAY_MS
 
     ; --- 5. Move cursor to the start of the second line ---
+;    acall LCD_DELAY_MS
     mov   a, #0xC0      ; Command: 0x80 (Set DDRAM) + 0x40 (Line 2 offset)
     acall LCD_CMD
     acall LCD_DELAY_MS
