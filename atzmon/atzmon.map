@@ -1,56 +1,0 @@
-ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
-Hexadecimal  [32-Bits]
-
-Area                       Addr        Size        Decimal Bytes (Attributes)
---------------------       ----        ----        ------- ----- ------------
-ABS1                   00000000    0000013C =         316. bytes (ABS,CON)
-
-        Value  Global            Value  Global            Value  Global    
-        -----  ------            -----  ------            -----  ------    
-     00000000  l_ABS     |    00000000  l_BIT_BAN |    00000000  l_BSEG   
-     00000000  l_BSEG_BY |    00000000  l_ISEG    |    00000000  l_OSEG   
-     00000000  l_REG_BAN |    00000000  l_REG_BAN |    00000000  l_REG_BAN
-     00000000  l_REG_BAN |    00000000  l_SSEG    |    00000000  l__CODE  
-     00000000  s_ABS     |    00000000  s_ABS0    |    00000000  s_ABS1   
-     00000000  s_BSEG    |    00000000  s_DSEG    |    00000000  s_REG_BAN
-     00000003  l_ABS0    |    00000008  s_REG_BAN |    00000010  s_REG_BAN
-     00000018  s_BIT_BAN |    00000018  s_ISEG    |    00000018  s_OSEG   
-     00000018  s_REG_BAN |    00000018  s_SSEG    |    00000020  s_BSEG_BY
-     00000020  s__CODE   |    00000053  l_DSEG    |    00000100  l_IRAM   
-     0000013C  l_ABS1   
-ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
-Hexadecimal  [32-Bits]
-
-Area                       Addr        Size        Decimal Bytes (Attributes)
---------------------       ----        ----        ------- ----- ------------
-ABS0                   00000000    00000003 =           3. bytes (ABS,CON)
-
-        Value  Global            Value  Global            Value  Global    
-        -----  ------            -----  ------            -----  ------    
-ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
-Hexadecimal  [32-Bits]
-
-Area                       Addr        Size        Decimal Bytes (Attributes)
---------------------       ----        ----        ------- ----- ------------
-.  .ABS.               00000000    00000000 =           0. bytes (ABS,CON)
-
-        Value  Global            Value  Global            Value  Global    
-        -----  ------            -----  ------            -----  ------    
-     00000000  .__.ABS. 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
-Hexadecimal  [32-Bits]
-
-Area                       Addr        Size        Decimal Bytes (Attributes)
---------------------       ----        ----        ------- ----- ------------
-DSEG                   00000000    00000053 =          83. bytes (REL,CON)
-
-        Value  Global            Value  Global            Value  Global    
-        -----  ------            -----  ------            -----  ------    
-ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
-
-Files Linked                              [ module(s) ]
-
-atzmon.rel                                [  ]
-
-
-
