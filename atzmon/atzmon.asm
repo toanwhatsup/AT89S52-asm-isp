@@ -94,7 +94,7 @@ START:
     acall LCD_DELAY_MS
 
     ; --- 5. Move cursor to the start of the second line ---
-    mov   a, #0xB0      ; Command: 0x80 (Set DDRAM) + 0x40 (Line 2 offset)
+    mov   a, #0xC0      ; Command: 0x80 (Set DDRAM) + 0x40 (Line 2 offset)
     acall LCD_CMD
     acall LCD_DELAY_MS
 

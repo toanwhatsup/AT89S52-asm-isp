@@ -3,5 +3,6 @@
 *.lst
 *.rel
 *.sym
+*.map
 *.swp
 
