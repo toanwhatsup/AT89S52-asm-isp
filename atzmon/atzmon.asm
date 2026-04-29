@@ -31,10 +31,8 @@ START:
     acall LCD_CMD
     
     ; --- 2. CRITICAL: Clear takes 1.52ms to 3ms ---
+    ; Let's wait 10ms to be safe
     mov   r7, #10
-CLEAR_DELAY:
-    acall LCD_DELAY_MS
-    djnz  r7, CLEAR_DELAY
 
     ; --- 3. Force Home (0x02) - Reset cursor to index 0 ---
     mov   a, #0x02
