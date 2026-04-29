@@ -69,15 +69,13 @@ LCD_CMD:
     ; High Nibble
     anl   a, #0xF0
     orl   a, #0x08      ; RS=0, RW=0, Backlight=1
-    acall LCD_RAW_WRITE
     acall LCD_PULSE_EN
-    
+
     ; Low Nibble
     pop   acc
     swap  a
     anl   a, #0xF0
     orl   a, #0x08      ; RS=0, RW=0, Backlight=1
-    acall LCD_RAW_WRITE
     acall LCD_PULSE_EN
     acall LCD_DELAY_MS
     ret
@@ -87,16 +85,14 @@ LCD_DATA:
     push acc
     ; High Nibble
     anl   a, #0xF0
-    orl   a, #0x09      ; Backlight=1, EN=1(start low), RS=1
-;    acall LCD_RAW_WRITE
+    orl   a, #0x09      ; Backlight=1, RS=1
     acall LCD_PULSE_EN
-    
+
     ; Low Nibble
     pop   acc
     swap  a
     anl   a, #0xF0
-    orl   a, #0x09      ; Backlight=1, EN=1(start low), RS=1
-;    acall LCD_RAW_WRITE
+    orl   a, #0x09      ; Backlight=1, RS=1
     acall LCD_PULSE_EN
     acall LCD_DELAY_MS
     ret
