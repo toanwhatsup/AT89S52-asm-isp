@@ -6,10 +6,8 @@ LCD_RAW_WRITE:
     mov   a, #LCD_ADDR  ; Device Address
     acall I2C_SEND
     pop   acc           ; Restore the data byte
-    push acc            ; Save before I2C_SEND destroys A via RLC
     acall I2C_SEND      ; Update the PCF8574 output
     acall I2C_STOP
-    pop   acc           ; Restore A for caller
     ret
 
 ; --- Toggle Enable Pin (Strobe) ---
@@ -71,7 +69,6 @@ LCD_CMD:
     ; High Nibble
     anl   a, #0xF0
     orl   a, #0x08      ; RS=0, RW=0, Backlight=1
-    acall LCD_RAW_WRITE
     acall LCD_PULSE_EN
 
     ; Low Nibble
@@ -79,7 +76,6 @@ LCD_CMD:
     swap  a
     anl   a, #0xF0
     orl   a, #0x08      ; RS=0, RW=0, Backlight=1
-    acall LCD_RAW_WRITE
     acall LCD_PULSE_EN
     acall LCD_DELAY_MS
     ret
@@ -90,7 +86,6 @@ LCD_DATA:
     ; High Nibble
     anl   a, #0xF0
     orl   a, #0x09      ; Backlight=1, RS=1
-    acall LCD_RAW_WRITE
     acall LCD_PULSE_EN
 
     ; Low Nibble
@@ -98,7 +93,6 @@ LCD_DATA:
     swap  a
     anl   a, #0xF0
     orl   a, #0x09      ; Backlight=1, RS=1
-    acall LCD_RAW_WRITE
     acall LCD_PULSE_EN
     acall LCD_DELAY_MS
     ret
