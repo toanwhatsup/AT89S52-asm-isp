@@ -3,7 +3,7 @@ Hexadecimal  [32-Bits]
 
 Area                       Addr        Size        Decimal Bytes (Attributes)
 --------------------       ----        ----        ------- ----- ------------
-ABS1                   00000000    000000DC =         220. bytes (ABS,CON)
+ABS1                   00000000    0000013C =         316. bytes (ABS,CON)
 
         Value  Global            Value  Global            Value  Global    
         -----  ------            -----  ------            -----  ------    
@@ -16,8 +16,8 @@ ABS1                   00000000    000000DC =         220. bytes (ABS,CON)
      00000003  l_ABS0    |    00000008  s_REG_BAN |    00000010  s_REG_BAN
      00000018  s_BIT_BAN |    00000018  s_ISEG    |    00000018  s_OSEG   
      00000018  s_REG_BAN |    00000018  s_SSEG    |    00000020  s_BSEG_BY
-     00000020  s__CODE   |    00000053  l_DSEG    |    000000DC  l_ABS1   
-     00000100  l_IRAM   
+     00000020  s__CODE   |    00000053  l_DSEG    |    00000100  l_IRAM   
+     0000013C  l_ABS1   
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
